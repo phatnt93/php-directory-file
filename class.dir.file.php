@@ -75,7 +75,7 @@ class DirFile{
 	// Get list file in dir
 	public static function getListFileInDir($pathDir, $options = null){
 		if($options == null){
-			$list = glob($pathDir)
+			$list = glob($pathDir);
 		}else{
 			$list = glob($pathDir, $options);
 		}
