@@ -120,6 +120,29 @@ class DirFile{
         } 
         closedir($dir); 
     }
+	
+    // Search File In Directory
+    function searchFileInDirectory($path = '', $searchName = '', $exact = true, &$output = []){
+        $list = scandir($path);
+        foreach ($list as $key => $item) {
+            if ($item != '.' && $item != '..') {
+                if (is_dir($path . '/' . $item)) {
+                    self::searchFileInDirectory($path . '/' . $item, $searchName, $exact, $output);
+                }else{
+                    if ($exact == true) {
+                        if ($item == $searchName) {
+                            $output[] = $path . '/' . $item;
+                        }
+                    }else{
+                        if (strpos($item, $searchName) !== false) {
+                            $output[] = $path . '/' . $item;
+                        }
+                    }
+                }
+            }
+        }
+        return $output;
+    }
 
     /////////////////
     // Zip & Unzip //
