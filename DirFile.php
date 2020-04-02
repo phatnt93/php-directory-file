@@ -1,8 +1,18 @@
 <?php 
+ 
+/** 
+* DirFile
+* 
+* Made by phatnt93
+* 02/04/2020
+* 
+* @license MIT License
+* @author phatnt <thanhphat.uit@gmail.com>
+* @github https://github.com/phatnt93/php-directory-file
+* @version 1.0.0
+* 
+*/
 
-/**
- * DirFile
- */
 class DirFile{
 	
 	function __construct(){
