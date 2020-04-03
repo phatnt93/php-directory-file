@@ -3,6 +3,7 @@ PHP classes making everyday coding easier and comfortable. Static functions for 
 
 ## Required
 PHP >= 5.6
+
 Extension: [ZipArchive](https://www.php.net/manual/en/class.ziparchive.php)
 
 ## Start
