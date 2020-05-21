@@ -58,7 +58,7 @@ Copy file or directory to new location
 ```
 Search file name in Directory
 ```
-$exact : true is find match with name. False is dind relative with name
+$exact : true is find match with name. False is find relative with name
 
 \DirFile::searchFileInDirectory($path, $searchName, $exact);
 ```
