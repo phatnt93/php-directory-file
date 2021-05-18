@@ -35,6 +35,14 @@ Delete a file
 ```
 \DirFile::deleteFile($path);
 ```
+Delete file when it expired
+```
+\DirFile::deleteFileAfterTime($path, $expire);
+```
+Delete files when they expired
+```
+\DirFile::deleteFilesAfterTime($dirPath, $expire);
+```
 Get list File in Directory
 ```
 Option:
@@ -51,6 +59,10 @@ GLOB_ERR - (added in PHP 5.1) Stop on errors (errors are ignored by default)
 Delete directory
 ```
 \DirFile::deleteDir($path);
+```
+Delete directory when it expired
+```
+\DirFile::deleteDirAfterTime($pathDir, $expire);
 ```
 Copy file or directory to new location
 ```
