@@ -78,6 +78,52 @@ class DirFile{
         return unlink($path);
     }
 
+    // Copy file
+    public static function copyFile($srcPath, $dstDir){
+        try {
+            if(!file_exists($srcPath)){
+                throw_error_message('error');
+            }
+            $srcBaseName = pathinfo($srcPath, PATHINFO_BASENAME);
+            if(!file_exists($dstDir)){
+                if(!mkdir($dstDir, 0777, true)){
+                    throw_error_message('error');
+                }
+            }
+            $dstPath = $dstDir . DIRECTORY_SEPARATOR . $srcBaseName;
+            if(!copy($srcPath, $dstPath)){
+                throw_error_message('error');
+            }
+            return true;
+        } catch (\Exception $e){
+            
+        }
+        return false;
+    }
+
+    // Move file
+    public static function moveFile($srcPath, $dstDir){
+        try {
+            if(!file_exists($srcPath)){
+                throw_error_message('error');
+            }
+            $srcBaseName = pathinfo($srcPath, PATHINFO_BASENAME);
+            if(!file_exists($dstDir)){
+                if(!mkdir($dstDir, 0777, true)){
+                    throw_error_message('error');
+                }
+            }
+            $dstPath = $dstDir . DIRECTORY_SEPARATOR . $srcBaseName;
+            if(!rename($srcPath, $dstPath)){
+                throw_error_message('error');
+            }
+            return true;
+        } catch (\Exception $e){
+            
+        }
+        return false;
+    }
+
     /**
      * Delete file after time
      *
